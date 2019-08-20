@@ -4,7 +4,7 @@
             {"zIndex":100}
           )
         });
-        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/wandb-long.svg" alt="W&amp;B"/><h2 class="headerTitleWithLogo">W&amp;B</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/started.html" target="_self">Docs</a></li><li class=""><a href="/docs/enterprise/about.html" target="_self">Enterprise</a></li><li class=""><a href="https://wandb.com" target="_self">Company</a></li><li class=""><a href="https://app.wandb.ai" target="_self">Login</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/wandb/docs/edit/master/docs/tensorflow-estimator-example.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">TensorFlow Estimator Example</h1></header><article><div><span><p>This is a complete example of TensorFlow code using an Estimator that trains a model and saves to W&amp;B</p>
+        </script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/wandb-long.svg" alt="W&amp;B"/><h2 class="headerTitleWithLogo">W&amp;B</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/started.html" target="_self">Docs</a></li><li class=""><a href="/docs/enterprise/about.html" target="_self">Enterprise</a></li><li class=""><a href="https://wandb.com" target="_self">Company</a></li><li class=""><a href="https://app.wandb.ai" target="_self">Login</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docMainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/wandb/docs/edit/master/docs/tensorflow-estimator-example.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">TensorFlow Estimator Example</h1></header><article><div><span><p>This is a complete example of TensorFlow code using an Estimator that trains a model and saves to W&amp;B</p>
 <p>You can find this example at <a href="https://github.com/wandb/examples/blob/master/tf-estimator-mnist/mnist.py">https://github.com/wandb/examples/blob/master/tf-estimator-mnist/mnist.py</a></p>
 <p>You can find the results of running this code at <a href="https://app.wandb.ai/l2k2/examples-tf-estimator-mnist/runs/p0ifowcb">https://app.wandb.ai/l2k2/examples-tf-estimator-mnist/runs/p0ifowcb</a></p>
 <pre><code class="hljs css language-python"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf
@@ -41,9 +41,9 @@ hook = WandbHook(summary_op)
 train_input_fn = tf.estimator.inputs.numpy_input_fn(
     x={<span class="hljs-string">"x"</span>: input(mnist.train)[<span class="hljs-number">0</span>]},
     y=input(mnist.train)[<span class="hljs-number">1</span>],
-    num_epochs=<span class="hljs-literal">None</span>,
+    num_epochs=<span class="hljs-keyword">None</span>,
     batch_size=<span class="hljs-number">50</span>,
-    shuffle=<span class="hljs-literal">True</span>,
+    shuffle=<span class="hljs-keyword">True</span>,
 )
 
 
@@ -54,14 +54,14 @@ test_input_fn = tf.estimator.inputs.numpy_input_fn(
     x={<span class="hljs-string">"x"</span>: input(mnist.test)[<span class="hljs-number">0</span>]},
     y=input(mnist.test)[<span class="hljs-number">1</span>],
     num_epochs=<span class="hljs-number">1</span>,
-    shuffle=<span class="hljs-literal">False</span>
+    shuffle=<span class="hljs-keyword">False</span>
 )
 
 <span class="hljs-comment"># Evaluate accuracy</span>
 accuracy_score = classifier.evaluate(input_fn=test_input_fn)[<span class="hljs-string">"accuracy"</span>]
 print(<span class="hljs-string">"\nTest Accuracy: {0:f}%\n"</span>.format(accuracy_score*<span class="hljs-number">100</span>))
 </code></pre>
-</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/wandb.svg" alt="W&amp;B" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/started.html">Getting Started</a><a href="/docs/configs.html">Python API Reference</a><a href="/docs/examples.html">Example Projects</a></div><div><h5>More</h5><a href="https://github.com/wandb/client">GitHub</a><a href="https://wandb.com">W&amp;B</a></div></section><section class="copyright">Copyright © 2019 Weights &amp; Biases, Inc.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav docOnPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/wandb.svg" alt="W&amp;B" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/started.html">Getting Started</a><a href="/docs/configs.html">Python API Reference</a><a href="/docs/examples.html">Example Projects</a></div><div><h5>More</h5><a href="https://github.com/wandb/client">GitHub</a><a href="https://wandb.com">W&amp;B</a></div></section><section class="copyright">Copyright © 2019 Weights &amp; Biases, Inc.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
