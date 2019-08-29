@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>TensorFlow Example · W&amp;B</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Estimator with Tensorboard Example"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="TensorFlow Example · W&amp;B"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.wandb.com/"/><meta property="og:description" content="## Estimator with Tensorboard Example"/><meta property="og:image" content="https://docs.wandb.com/img/wandb.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.wandb.com/img/wandb.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-cave-light.min.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/sidebar.js"></script><script type="text/javascript" src="/js/segment.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/wandb-long.svg" alt="W&amp;B"/><h2 class="headerTitleWithLogo">W&amp;B</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/getting-started" target="_self">Docs</a></li><li class=""><a href="/enterprise/about" target="_self">Enterprise</a></li><li class=""><a href="https://wandb.com" target="_self">Company</a></li><li class=""><a href="https://app.wandb.ai" target="_self">Login</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Examples</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/getting-started">Getting Started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Python Library</h3><ul class=""><li class="navListItem"><a class="navItem" href="/wandb/init">wandb.init</a></li><li class="navListItem"><a class="navItem" href="/wandb/config">wandb.config</a></li><li class="navListItem"><a class="navItem" href="/wandb/log">wandb.log</a></li><li class="navListItem"><a class="navItem" href="/wandb/save">wandb.save</a></li><li class="navListItem"><a class="navItem" href="/wandb/restore">wandb.restore</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Framework Support</h3><ul class=""><li class="navListItem"><a class="navItem" href="/frameworks/keras">Keras</a></li><li class="navListItem"><a class="navItem" href="/frameworks/tensorflow">TensorFlow</a></li><li class="navListItem"><a class="navItem" href="/frameworks/pytorch">PyTorch</a></li><li class="navListItem"><a class="navItem" href="/frameworks/fastai">Fast.ai</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integrations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/integrations/tensorboard">Tensorboard</a></li><li class="navListItem"><a class="navItem" href="/integrations/sagemaker">SageMaker</a></li><li class="navListItem"><a class="navItem" href="/integrations/kubeflow">Kubeflow</a></li><li class="navListItem"><a class="navItem" href="/integrations/docker">Docker</a></li><li class="navListItem"><a class="navItem" href="/integrations/jupyter">Jupyter</a></li><li class="navListItem"><a class="navItem" href="/integrations/api">Python Export API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Command Line</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cli/overview">Command Line Overview</a></li><li class="navListItem"><a class="navItem" href="/cli/restoring">Restoring State</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Advanced Usage</h3><ul class=""><li class="navListItem"><a class="navItem" href="/advanced/automated">Environment Variables</a></li><li class="navListItem"><a class="navItem" href="/advanced/grouping">Grouping</a></li><li class="navListItem"><a class="navItem" href="/advanced/resuming">Resuming</a></li><li class="navListItem"><a class="navItem" href="/advanced/security">Security</a></li><li class="navListItem"><a class="navItem" href="/advanced/limits">Limits</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Sweeps</h3><ul class=""><li class="navListItem"><a class="navItem" href="/sweeps/overview">Sweeps Overview</a></li><li class="navListItem"><a class="navItem" href="/sweeps/configuration">Configuration</a></li><li class="navListItem"><a class="navItem" href="/sweeps/local">Local Controller</a></li><li class="navListItem"><a class="navItem" href="/sweeps/python">Jupyter/Python API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Alerts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/alerts/slack">Slack</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Examples</h3><ul class=""><li class="navListItem"><a class="navItem" href="/frameworks/keras-example">Keras</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/frameworks/tensorflow-example">TensorFlow</a></li><li class="navListItem"><a class="navItem" href="/frameworks/pytorch-example">PyTorch</a></li><li class="navListItem"><a class="navItem" href="/examples">More Projects</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Resources</h3><ul class=""><li class="navListItem"><a class="navItem" href="/faq">FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/wandb/docs/edit/master/docs/frameworks/tensorflow-example.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">TensorFlow Example</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="estimator-with-tensorboard-example"></a><a href="#estimator-with-tensorboard-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Estimator with Tensorboard Example</h2>
+<p>This is a complete example of TensorFlow code using an Estimator that trains a model and saves to W&amp;B</p>
+<p>You can find this example on <a href="https://github.com/wandb/examples/blob/master/tf-estimator-mnist/mnist.py">GitHub</a> and see the results on <a href="https://app.wandb.ai/l2k2/examples-tf-estimator-mnist/runs/p0ifowcb">W&amp;B</a></p>
+<pre><code class="hljs css language-python"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> wandb
+wandb.init(project=<span class="hljs-string">"mnist"</span>, sync_tensorboard=<span class="hljs-literal">True</span>)
+wandb.config.batch_size = <span class="hljs-number">256</span>
+
+mnist = tf.contrib.learn.datasets.load_dataset(<span class="hljs-string">"mnist"</span>)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">input</span><span class="hljs-params">(dataset)</span>:</span>
+    <span class="hljs-keyword">return</span> dataset.images, dataset.labels.astype(np.int32)
+
+
+<span class="hljs-comment"># Specify feature</span>
+feature_columns = [tf.feature_column.numeric_column(<span class="hljs-string">"x"</span>, shape=[<span class="hljs-number">28</span>, <span class="hljs-number">28</span>])]
+
+<span class="hljs-comment"># Build 2 layer DNN classifier</span>
+<span class="hljs-comment"># <span class="hljs-doctag">NOTE:</span> We change the summary logging frequency to be every epoch with save_summary_steps</span>
+classifier = tf.estimator.DNNClassifier(
+    feature_columns=feature_columns,
+    hidden_units=[<span class="hljs-number">256</span>, <span class="hljs-number">32</span>],
+    optimizer=tf.train.AdamOptimizer(<span class="hljs-number">1e-4</span>),
+    n_classes=<span class="hljs-number">10</span>,
+    dropout=<span class="hljs-number">0.1</span>,
+    config=tf.estimator.RunConfig(
+        save_summary_steps=mnist.train.images.shape[<span class="hljs-number">0</span>] / wandb.config.batch_size)
+)
+
+<span class="hljs-comment"># Turn on logging</span>
+tf.logging.set_verbosity(tf.logging.INFO)
+
+<span class="hljs-comment"># Define the training inputs</span>
+train_input_fn = tf.estimator.inputs.numpy_input_fn(
+    x={<span class="hljs-string">"x"</span>: input(mnist.train)[<span class="hljs-number">0</span>]},
+    y=input(mnist.train)[<span class="hljs-number">1</span>],
+    num_epochs=<span class="hljs-literal">None</span>,
+    batch_size=wandb.config.batch_size,
+    shuffle=<span class="hljs-literal">True</span>,
+)
+
+<span class="hljs-comment"># Train the classifier</span>
+classifier.train(input_fn=train_input_fn, steps=<span class="hljs-number">100000</span>)
+
+<span class="hljs-comment"># Define the test inputs</span>
+test_input_fn = tf.estimator.inputs.numpy_input_fn(
+    x={<span class="hljs-string">"x"</span>: input(mnist.test)[<span class="hljs-number">0</span>]},
+    y=input(mnist.test)[<span class="hljs-number">1</span>],
+    num_epochs=<span class="hljs-number">1</span>,
+    shuffle=<span class="hljs-literal">False</span>
+)
+
+<span class="hljs-comment"># Evaluate accuracy</span>
+accuracy_score = classifier.evaluate(input_fn=test_input_fn)[<span class="hljs-string">"accuracy"</span>]
+print(<span class="hljs-string">"\nTest Accuracy: {0:f}%\n"</span>.format(accuracy_score*<span class="hljs-number">100</span>))
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="raw-tensorflow-example"></a><a href="#raw-tensorflow-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Raw TensorFlow Example</h2>
+<p>This is a complete example of TensorFlow code that trains a model and saves to W&amp;B.</p>
+<p>You can find this example on <a href="https://github.com/wandb/examples/blob/master/tf-cnn-fashion/train.py">GitHub</a> and see the results on <a href="https://app.wandb.ai/wandb/tensorflow-fashion-mnist/runs/b7ruskvv">W&amp;B</a>.</p>
+<pre><code class="hljs css language-python"><span class="hljs-keyword">from</span> tensorflow.examples.tutorials.mnist <span class="hljs-keyword">import</span> input_data
+<span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf
+<span class="hljs-keyword">import</span> wandb
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    wandb.init()
+
+    <span class="hljs-comment"># Import Fashion MNIST data</span>
+    data = input_data.read_data_sets(<span class="hljs-string">'data/fashion'</span>)
+
+    categories = {
+        <span class="hljs-number">0</span>:<span class="hljs-string">'T-shirt/Top'</span>,
+        <span class="hljs-number">1</span>:<span class="hljs-string">'Trouser'</span>,
+        <span class="hljs-number">2</span>:<span class="hljs-string">'Pullover'</span>,
+        <span class="hljs-number">3</span>:<span class="hljs-string">'Dress'</span>,
+        <span class="hljs-number">4</span>:<span class="hljs-string">'Coat'</span>,
+        <span class="hljs-number">5</span>:<span class="hljs-string">'Sandal'</span>,
+        <span class="hljs-number">6</span>:<span class="hljs-string">'Shirt'</span>,
+        <span class="hljs-number">7</span>:<span class="hljs-string">'Sneaker'</span>,
+        <span class="hljs-number">8</span>:<span class="hljs-string">'Bag'</span>,
+        <span class="hljs-number">9</span>:<span class="hljs-string">'Ankle Boot'</span>}
+
+
+    flags = tf.app.flags
+    flags.DEFINE_string(<span class="hljs-string">'data_dir'</span>, <span class="hljs-string">'/tmp/data'</span>,
+                        <span class="hljs-string">'Directory with the mnist data.'</span>)
+    flags.DEFINE_integer(<span class="hljs-string">'batch_size'</span>, <span class="hljs-number">128</span>, <span class="hljs-string">'Batch size.'</span>)
+    flags.DEFINE_float(<span class="hljs-string">'learning_rate'</span>, <span class="hljs-number">0.1</span>, <span class="hljs-string">'Learning rate'</span>)
+
+    flags.DEFINE_integer(<span class="hljs-string">'num_steps'</span>, <span class="hljs-number">5000</span>,
+                         <span class="hljs-string">'Num of batches to train.'</span>)
+    flags.DEFINE_integer(<span class="hljs-string">'display_step'</span>, <span class="hljs-number">100</span>, <span class="hljs-string">'Steps between displaying output.'</span>)
+    flags.DEFINE_integer(<span class="hljs-string">'n_hidden_1'</span>, <span class="hljs-number">256</span>, <span class="hljs-string">'1st layer number of neurons.'</span>)
+    flags.DEFINE_integer(<span class="hljs-string">'n_hidden_2'</span>, <span class="hljs-number">256</span>, <span class="hljs-string">'2nd layer number of neurons.'</span>)
+    flags.DEFINE_integer(<span class="hljs-string">'num_input'</span>, <span class="hljs-number">784</span>, <span class="hljs-string">'MNIST data input (img shape: 28*28)'</span>)
+    flags.DEFINE_integer(<span class="hljs-string">'num_classes'</span>, <span class="hljs-number">10</span>, <span class="hljs-string">'MNIST total classes (0-9 digits)'</span>)
+
+    FLAGS = flags.FLAGS
+
+    <span class="hljs-comment"># Import all of the tensorflow flags into wandb</span>
+    wandb.config.update(FLAGS)
+
+    mnist = input_data.read_data_sets(<span class="hljs-string">"/tmp/data/"</span>, one_hot=<span class="hljs-literal">True</span>)
+
+    <span class="hljs-comment"># tf Graph input</span>
+    X = tf.placeholder(<span class="hljs-string">"float"</span>, [<span class="hljs-literal">None</span>, FLAGS.num_input])
+    Y = tf.placeholder(<span class="hljs-string">"float"</span>, [<span class="hljs-literal">None</span>, FLAGS.num_classes])
+
+    <span class="hljs-comment"># Store layers weight &amp; bias</span>
+    weights = {
+        <span class="hljs-string">'h1'</span>: tf.Variable(tf.random_normal([FLAGS.num_input, FLAGS.n_hidden_1])),
+        <span class="hljs-string">'h2'</span>: tf.Variable(tf.random_normal([FLAGS.n_hidden_1, FLAGS.n_hidden_2])),
+        <span class="hljs-string">'out'</span>: tf.Variable(tf.random_normal([FLAGS.n_hidden_2, FLAGS.num_classes]))
+    }
+    biases = {
+        <span class="hljs-string">'b1'</span>: tf.Variable(tf.random_normal([FLAGS.n_hidden_1])),
+        <span class="hljs-string">'b2'</span>: tf.Variable(tf.random_normal([FLAGS.n_hidden_2])),
+        <span class="hljs-string">'out'</span>: tf.Variable(tf.random_normal([FLAGS.num_classes]))
+    }
+
+    <span class="hljs-comment"># Create model</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">neural_net</span><span class="hljs-params">(x)</span>:</span>
+        <span class="hljs-comment"># Hidden fully connected layer with 256 neurons</span>
+        layer_1 = tf.add(tf.matmul(x, weights[<span class="hljs-string">'h1'</span>]), biases[<span class="hljs-string">'b1'</span>])
+        <span class="hljs-comment"># Hidden fully connected layer with 256 neurons</span>
+        layer_2 = tf.add(tf.matmul(layer_1, weights[<span class="hljs-string">'h2'</span>]), biases[<span class="hljs-string">'b2'</span>])
+        <span class="hljs-comment"># Output fully connected layer with a neuron for each class</span>
+        out_layer = tf.matmul(layer_2, weights[<span class="hljs-string">'out'</span>]) + biases[<span class="hljs-string">'out'</span>]
+        <span class="hljs-keyword">return</span> out_layer
+
+    <span class="hljs-comment"># Construct model</span>
+    logits = neural_net(X)
+    prediction = tf.nn.softmax(logits)
+
+    <span class="hljs-comment"># Define loss and optimizer</span>
+    loss_op = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(
+        logits=logits, labels=Y))
+    optimizer = tf.train.AdamOptimizer(learning_rate=FLAGS.learning_rate)
+    train_op = optimizer.minimize(loss_op)
+
+    <span class="hljs-comment"># Evaluate model</span>
+    correct_pred = tf.equal(tf.argmax(prediction, <span class="hljs-number">1</span>), tf.argmax(Y, <span class="hljs-number">1</span>))
+    accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
+
+    <span class="hljs-comment"># Initialize the variables (i.e. assign their default value)</span>
+    init = tf.global_variables_initializer()
+
+    <span class="hljs-comment"># Start training</span>
+    <span class="hljs-keyword">with</span> tf.Session() <span class="hljs-keyword">as</span> sess:
+        <span class="hljs-comment"># Run the initializer</span>
+        sess.run(init)
+
+        <span class="hljs-keyword">for</span> step <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, FLAGS.num_steps+<span class="hljs-number">1</span>):
+            batch_x, batch_y = mnist.train.next_batch(FLAGS.batch_size)
+            <span class="hljs-comment"># Run optimization op (backprop)</span>
+            sess.run(train_op, feed_dict={X: batch_x, Y: batch_y})
+            <span class="hljs-keyword">if</span> step % FLAGS.display_step == <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> step == <span class="hljs-number">1</span>:
+                <span class="hljs-comment"># Calculate batch loss and accuracy</span>
+                loss, acc = sess.run([loss_op, accuracy], feed_dict={X: batch_x,
+                                                                     Y: batch_y})
+                val_loss, val_acc = sess.run([loss_op, accuracy], feed_dict={
+                                                        X: mnist.test.images,
+                                                        Y: mnist.test.labels})
+
+                print(<span class="hljs-string">"Step "</span> + str(step) + <span class="hljs-string">", Minibatch Loss= "</span> + \
+                      <span class="hljs-string">"{:.4f}"</span>.format(loss) + <span class="hljs-string">", Training Accuracy= "</span> + \
+                      <span class="hljs-string">"{:.3f}"</span>.format(acc))
+
+                wandb.log({<span class="hljs-string">'acc'</span>: acc, <span class="hljs-string">'loss'</span>:loss,
+                           <span class="hljs-string">'val_acc'</span>: acc, <span class="hljs-string">'val_loss'</span>: val_loss})
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:
+   main()
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/frameworks/keras-example"><span class="arrow-prev">← </span><span>Keras</span></a><a class="docs-next button" href="/frameworks/pytorch-example"><span class="function-name-prevnext">PyTorch</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#estimator-with-tensorboard-example">Estimator with Tensorboard Example</a></li><li><a href="#raw-tensorflow-example">Raw TensorFlow Example</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/wandb.svg" alt="W&amp;B" width="66" height="58"/></a><div><h5>Docs</h5><a href="/getting-started">Getting Started</a><a href="/wandb/init">Python API Reference</a><a href="/examples">Example Projects</a></div><div><h5>More</h5><a href="https://github.com/wandb/client">GitHub</a><a href="https://wandb.com">W&amp;B</a></div></section><section class="copyright">Copyright © 2019 Weights &amp; Biases, Inc.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '0510e717ad08795f12b729ed540687cb',
+                indexName: 'wandb',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

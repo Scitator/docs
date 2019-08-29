@@ -1,131 +1,15 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Examples of W&amp;B Projects · W&amp;B</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Example Repository"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Examples of W&amp;B Projects · W&amp;B"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.wandb.com/index.html"/><meta property="og:description" content="## Example Repository"/><meta property="og:image" content="https://docs.wandb.com/img/wandb.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.wandb.com/img/wandb.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-cave-light.min.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/sidebar.js"></script><script type="text/javascript" src="/js/segment.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
-        document.addEventListener('DOMContentLoaded', function() {
-          addBackToTop(
-            {"zIndex":100}
-          )
-        });
-        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/wandb-long.svg" alt="W&amp;B"/><h2 class="headerTitleWithLogo">W&amp;B</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/started.html" target="_self">Docs</a></li><li class=""><a href="/docs/enterprise/about.html" target="_self">Enterprise</a></li><li class=""><a href="https://wandb.com" target="_self">Company</a></li><li class=""><a href="https://app.wandb.ai" target="_self">Login</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Examples</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/started.html">Getting Started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Python Library</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/init.html">wandb.init</a></li><li class="navListItem"><a class="navItem" href="/docs/config.html">wandb.config</a></li><li class="navListItem"><a class="navItem" href="/docs/log.html">wandb.log</a></li><li class="navListItem"><a class="navItem" href="/docs/save.html">wandb.save</a></li><li class="navListItem"><a class="navItem" href="/docs/restore.html">wandb.restore</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Framework Support</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/frameworks/keras.html">Keras</a></li><li class="navListItem"><a class="navItem" href="/docs/frameworks/tensorflow.html">TensorFlow</a></li><li class="navListItem"><a class="navItem" href="/docs/frameworks/pytorch.html">PyTorch</a></li><li class="navListItem"><a class="navItem" href="/docs/frameworks/fastai.html">Fast.ai</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integrations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/integrations/tensorboard.html">Tensorboard</a></li><li class="navListItem"><a class="navItem" href="/docs/integrations/sagemaker.html">SageMaker</a></li><li class="navListItem"><a class="navItem" href="/docs/integrations/kubeflow.html">Kubeflow</a></li><li class="navListItem"><a class="navItem" href="/docs/integrations/docker.html">Docker</a></li><li class="navListItem"><a class="navItem" href="/docs/integrations/jupyter.html">Jupyter</a></li><li class="navListItem"><a class="navItem" href="/docs/integrations/api.html">Python Export API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Command Line</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/cli.html">Command Line Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/restoring.html">Restoring State</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Advanced Usage</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/automated.html">Environment Variables</a></li><li class="navListItem"><a class="navItem" href="/docs/grouping.html">Grouping</a></li><li class="navListItem"><a class="navItem" href="/docs/resuming.html">Resuming</a></li><li class="navListItem"><a class="navItem" href="/docs/security.html">Security</a></li><li class="navListItem"><a class="navItem" href="/docs/limits.html">Limits</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Sweeps</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/sweeps/overview.html">Sweeps Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/sweeps/configuration.html">Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/sweeps/local.html">Local Controller</a></li><li class="navListItem"><a class="navItem" href="/docs/sweeps/python.html">Jupyter/Python API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Alerts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/alerts/slack.html">Slack</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Examples</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/frameworks/keras-example.html">Keras</a></li><li class="navListItem"><a class="navItem" href="/docs/frameworks/tensorflow-example.html">TensorFlow</a></li><li class="navListItem"><a class="navItem" href="/docs/frameworks/pytorch-example.html">PyTorch</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/examples.html">More Projects</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Resources</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/faq.html">FAQ</a></li></ul></div></div></section></div><script>
-            var coll = document.getElementsByClassName('collapsible');
-            var checkActiveCategory = true;
-            for (var i = 0; i < coll.length; i++) {
-              var links = coll[i].nextElementSibling.getElementsByTagName('*');
-              if (checkActiveCategory){
-                for (var j = 0; j < links.length; j++) {
-                  if (links[j].classList.contains('navListItemActive')){
-                    coll[i].nextElementSibling.classList.toggle('hide');
-                    coll[i].childNodes[1].classList.toggle('rotate');
-                    checkActiveCategory = false;
-                    break;
-                  }
-                }
-              }
-
-              coll[i].addEventListener('click', function() {
-                var arrow = this.childNodes[1];
-                arrow.classList.toggle('rotate');
-                var content = this.nextElementSibling;
-                content.classList.toggle('hide');
-              });
-            }
-
-            document.addEventListener('DOMContentLoaded', function() {
-              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
-              createToggler('#tocToggler', 'body', 'tocActive');
-
-              var headings = document.querySelector('.toc-headings');
-              headings && headings.addEventListener('click', function(event) {
-                var el = event.target;
-                while(el !== headings){
-                  if (el.tagName === 'A') {
-                    document.body.classList.remove('tocActive');
-                    break;
-                  } else{
-                    el = el.parentNode;
-                  }
-                }
-              }, false);
-
-              function createToggler(togglerSelector, targetSelector, className) {
-                var toggler = document.querySelector(togglerSelector);
-                var target = document.querySelector(targetSelector);
-
-                if (!toggler) {
-                  return;
-                }
-
-                toggler.onclick = function(event) {
-                  event.preventDefault();
-
-                  target.classList.toggle(className);
-                };
-              }
-            });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/wandb/docs/edit/master/docs/examples.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Examples of W&amp;B Projects</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="example-repository"></a><a href="#example-repository" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example Repository</h2>
-<p>We have a public example repository you can find at <a href="https://github.com/wandb/examples">https://github.com/wandb/examples</a>.</p>
-<h2><a class="anchor" aria-hidden="true" id="even-more-examples"></a><a href="#even-more-examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Even more examples</h2>
-<p>These are other projects that use wandb.  The W&amp;B dashboard is the result of running the code with wandb.  We also include github links to the original code.</p>
-<h2><a class="anchor" aria-hidden="true" id="keras-examples"></a><a href="#keras-examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Keras examples</h2>
-<table>
-<thead>
-<tr><th>Description</th><th>Public Dashboard</th><th>Code</th></tr>
-</thead>
-<tbody>
-<tr><td>Colorizing CNN transforms B&amp;W images to color</td><td><a href="https://app.wandb.ai/borisd13/colorizer/reports?view=Private%20User%2FColorizer%20Project">W&amp;B Dashboard</a></td><td><a href="https://github.com/borisd13/colorizer">Github Repo</a></td></tr>
-<tr><td>CNN Face emotion classifier</td><td><a href="https://app.wandb.ai/wandb/face-emotion">W&amp;B Dashboard</a></td><td><a href="https://github.com/lukas/face_classification">Github Repo</a></td></tr>
-<tr><td>Mask RCNN semantic segmentation</td><td><a href="https://app.wandb.ai/trentwatson1/mask-rcnn/reports?view=%2FNew%20Report...">W&amp;B Dashboard</a></td><td><a href="https://github.com/connorhough/mask_rcnn">Github Repo</a></td></tr>
-<tr><td>Finetuning CNN on iNaturalist data</td><td><a href="https://app.wandb.ai/stacey/keras_finetune?workspace=user-l2k2">W&amp;B Dashboard</a></td><td><a href="https://github.com/wandb/examples/tree/master/keras-cnn-nature">Github Repo</a></td></tr>
-<tr><td>Semantic segmentation with unet</td><td><a href="https://app.wandb.ai/gabesmed/witness">W&amp;B Dashboard</a></td><td><a href="https://github.com/wandb/witness">Github Repo</a></td></tr>
-</tbody>
-</table>
-<h2><a class="anchor" aria-hidden="true" id="tensorflow-examples"></a><a href="#tensorflow-examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TensorFlow examples</h2>
-<table>
-<thead>
-<tr><th>Description</th><th>Public Dashboard</th><th>Code</th></tr>
-</thead>
-<tbody>
-<tr><td>GAN to predict video frames</td><td><a href="https://app.wandb.ai/wandb/catz/runs/qfsbxd3r">W&amp;B Dashboard</a></td><td><a href="https://github.com/sirebellum/catz_contest">Github Repo</a></td></tr>
-</tbody>
-</table>
-<h2><a class="anchor" aria-hidden="true" id="pytorch-examples"></a><a href="#pytorch-examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PyTorch examples</h2>
-<table>
-<thead>
-<tr><th>Description</th><th>Public Dashboard</th><th>Code</th></tr>
-</thead>
-<tbody>
-<tr><td>Colorizing CNN transforms B&amp;W images to color</td><td><a href="https://app.wandb.ai/clarence-n-huang/color-best-looking/reports">W&amp;B Dashboard</a></td><td><a href="https://github.com/clarencenhuang/dl-colorize">Github Repo</a></td></tr>
-<tr><td>Yolo-2 Bounding Box</td><td><a href="https://app.wandb.ai/l2k2/darknet">W&amp;B Dashboard</a></td><td><a href="https://github.com/lukas/pytorch-yolo2">Github Repo</a></td></tr>
-<tr><td>Reinforcement Learning</td><td><a href="https://app.wandb.ai/kairproject/kair_algorithms_draft-scripts/runs/ylmssdkf">W&amp;B Dashboard</a></td><td><a href="https://app.wandb.ai/wandb/catz/runs/qfsbxd3r">Github Repo</a></td></tr>
-<tr><td>char-RNN to forecast text</td><td><a href="https://app.wandb.ai/borisd13/char-RNN">W&amp;B Dashboard</a></td><td><a href="https://github.com/borisdayma/char-RNN">Github Repo</a></td></tr>
-</tbody>
-</table>
-<h2><a class="anchor" aria-hidden="true" id="fastai-examples"></a><a href="#fastai-examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fast.ai examples</h2>
-<table>
-<thead>
-<tr><th>Description</th><th>Public Dashboard</th><th>Code</th></tr>
-</thead>
-<tbody>
-<tr><td>Classifying Simpson's characters</td><td><a href="https://app.wandb.ai/borisd13/simpsons-fastai">W&amp;B Dashboard</a></td><td><a href="https://github.com/borisdayma/simpsons-fastai">Github Repo</a></td></tr>
-<tr><td>Semantic Segmentation</td><td><a href="https://app.wandb.ai/borisd13/semantic-segmentation/?workspace=user-borisd13">W&amp;B Dashboard</a></td><td><a href="https://github.com/borisdayma/semantic-segmentation/blob/master/src/train.py">Github Repo</a></td></tr>
-</tbody>
-</table>
-<h2><a class="anchor" aria-hidden="true" id="can-we-add-your-project-email-us"></a><a href="#can-we-add-your-project-email-us" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Can we add your project?  Email us!</h2>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/frameworks/pytorch-example.html"><span class="arrow-prev">← </span><span class="function-name-prevnext">PyTorch</span></a><a class="docs-next button" href="/docs/faq.html"><span>FAQ</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#example-repository">Example Repository</a></li><li><a href="#even-more-examples">Even more examples</a></li><li><a href="#keras-examples">Keras examples</a></li><li><a href="#tensorflow-examples">TensorFlow examples</a></li><li><a href="#pytorch-examples">PyTorch examples</a></li><li><a href="#fastai-examples">Fast.ai examples</a></li><li><a href="#can-we-add-your-project-email-us">Can we add your project?  Email us!</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/wandb.svg" alt="W&amp;B" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/started.html">Getting Started</a><a href="/docs/init.html">Python API Reference</a><a href="/docs/examples.html">Example Projects</a></div><div><h5>More</h5><a href="https://github.com/wandb/client">GitHub</a><a href="https://wandb.com">W&amp;B</a></div></section><section class="copyright">Copyright © 2019 Weights &amp; Biases, Inc.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
-                document.addEventListener('keyup', function(e) {
-                  if (e.target !== document.body) {
-                    return;
-                  }
-                  // keyCode for '/' (slash)
-                  if (e.keyCode === 191) {
-                    const search = document.getElementById('search_input_react');
-                    search && search.focus();
-                  }
-                });
-              </script><script>
-              var search = docsearch({
-                
-                apiKey: '0510e717ad08795f12b729ed540687cb',
-                indexName: 'wandb',
-                inputSelector: '#search_input_react',
-                algoliaOptions: {}
-              });
-            </script></body></html>
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=/examples" />
+    <script type="text/javascript">
+      window.location.href = "/examples";
+    </script>
+    <title>Your Site Title Here</title>
+  </head>
+  <body>
+    If you are not redirected automatically, follow this
+    <a href="/examples">link</a>.
+  </body>
+</html>

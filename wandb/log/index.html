@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>wandb.log · W&amp;B</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Overview"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="wandb.log · W&amp;B"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.wandb.com/"/><meta property="og:description" content="## Overview"/><meta property="og:image" content="https://docs.wandb.com/img/wandb.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.wandb.com/img/wandb.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-cave-light.min.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/sidebar.js"></script><script type="text/javascript" src="/js/segment.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/wandb-long.svg" alt="W&amp;B"/><h2 class="headerTitleWithLogo">W&amp;B</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/getting-started" target="_self">Docs</a></li><li class=""><a href="/enterprise/about" target="_self">Enterprise</a></li><li class=""><a href="https://wandb.com" target="_self">Company</a></li><li class=""><a href="https://app.wandb.ai" target="_self">Login</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Python Library</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/getting-started">Getting Started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Python Library</h3><ul class=""><li class="navListItem"><a class="navItem" href="/wandb/init">wandb.init</a></li><li class="navListItem"><a class="navItem" href="/wandb/config">wandb.config</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/wandb/log">wandb.log</a></li><li class="navListItem"><a class="navItem" href="/wandb/save">wandb.save</a></li><li class="navListItem"><a class="navItem" href="/wandb/restore">wandb.restore</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Framework Support</h3><ul class=""><li class="navListItem"><a class="navItem" href="/frameworks/keras">Keras</a></li><li class="navListItem"><a class="navItem" href="/frameworks/tensorflow">TensorFlow</a></li><li class="navListItem"><a class="navItem" href="/frameworks/pytorch">PyTorch</a></li><li class="navListItem"><a class="navItem" href="/frameworks/fastai">Fast.ai</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integrations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/integrations/tensorboard">Tensorboard</a></li><li class="navListItem"><a class="navItem" href="/integrations/sagemaker">SageMaker</a></li><li class="navListItem"><a class="navItem" href="/integrations/kubeflow">Kubeflow</a></li><li class="navListItem"><a class="navItem" href="/integrations/docker">Docker</a></li><li class="navListItem"><a class="navItem" href="/integrations/jupyter">Jupyter</a></li><li class="navListItem"><a class="navItem" href="/integrations/api">Python Export API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Command Line</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cli/overview">Command Line Overview</a></li><li class="navListItem"><a class="navItem" href="/cli/restoring">Restoring State</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Advanced Usage</h3><ul class=""><li class="navListItem"><a class="navItem" href="/advanced/automated">Environment Variables</a></li><li class="navListItem"><a class="navItem" href="/advanced/grouping">Grouping</a></li><li class="navListItem"><a class="navItem" href="/advanced/resuming">Resuming</a></li><li class="navListItem"><a class="navItem" href="/advanced/security">Security</a></li><li class="navListItem"><a class="navItem" href="/advanced/limits">Limits</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Sweeps</h3><ul class=""><li class="navListItem"><a class="navItem" href="/sweeps/overview">Sweeps Overview</a></li><li class="navListItem"><a class="navItem" href="/sweeps/configuration">Configuration</a></li><li class="navListItem"><a class="navItem" href="/sweeps/local">Local Controller</a></li><li class="navListItem"><a class="navItem" href="/sweeps/python">Jupyter/Python API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Alerts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/alerts/slack">Slack</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Examples</h3><ul class=""><li class="navListItem"><a class="navItem" href="/frameworks/keras-example">Keras</a></li><li class="navListItem"><a class="navItem" href="/frameworks/tensorflow-example">TensorFlow</a></li><li class="navListItem"><a class="navItem" href="/frameworks/pytorch-example">PyTorch</a></li><li class="navListItem"><a class="navItem" href="/examples">More Projects</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Resources</h3><ul class=""><li class="navListItem"><a class="navItem" href="/faq">FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/wandb/docs/edit/master/docs/wandb/log.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">wandb.log</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overview</h2>
+<p>Calling <code>wandb.log(dict)</code> logs the keys and values of the dictionary passed in and associates the values with a <em>step</em>. Wandb.log can log histograms and custom matplotlib objects and rich media.</p>
+<p><code>wandb.log(dict)</code> accepts a few keyword arguments:</p>
+<ul>
+<li><strong>step</strong> — Step to associate the log with (see <a href="#incremental-logging">Incremental Logging</a>)</li>
+<li><strong>commit</strong> — If true, increments the step associated with the log(<em>default: true</em>)</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h2>
+<p>Any time you call <code>wandb.log</code> and pass in a dictionary of keys and values, it will be saved as a new time step for plots in the W&amp;B app.</p>
+<pre><code class="hljs css language-python">wandb.log({<span class="hljs-string">'accuracy'</span>: <span class="hljs-number">0.9</span>, <span class="hljs-string">'epoch'</span>: <span class="hljs-number">5</span>})
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="incremental-logging"></a><a href="#incremental-logging" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Incremental Logging</h2>
+<p>If you want to log to a single history step from lots of different places in your code you can pass a step index to <code>wandb.log()</code> as follows:</p>
+<pre><code class="hljs css language-python">wandb.log({<span class="hljs-string">'loss'</span>: <span class="hljs-number">0.2</span>}, step=step)
+</code></pre>
+<p>As long as you keep passing the same value for <code>step</code>, W&amp;B will collect the keys and values from each call in one unified dictionary. As soon you call <code>wandb.log()</code> with a different value for <code>step</code> than the previous one, W&amp;B will write all the collected keys and values to the history, and start collection over again. Note that this means you should only use this with consecutive values for <code>step</code>: 0, 1, 2, .... This feature doesn't let you write to absolutely any history step that you'd like, only the &quot;current&quot; one and the &quot;next&quot; one.</p>
+<p>You can also set <strong>commit=False</strong> in <code>wandb.log</code> to accumulate metrics, just be sure to call <code>wandb.log</code> without the <strong>commit</strong> flag to persist the metrics.</p>
+<pre><code class="hljs css language-python">wandb.log({<span class="hljs-string">'loss'</span>: <span class="hljs-number">0.2</span>}, commit=<span class="hljs-literal">False</span>)
+<span class="hljs-comment"># Somewhere else when I'm ready to report this step:</span>
+wandb.log({<span class="hljs-string">'accuracy'</span>: <span class="hljs-number">0.8</span>})
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="logging-objects"></a><a href="#logging-objects" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging Objects</h2>
+<p>Wandb handles a variety of common objects that you might want to log.</p>
+<h3><a class="anchor" aria-hidden="true" id="logging-tensors"></a><a href="#logging-tensors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging Tensors</h3>
+<p>If you pass a numpy array, pytorch tensor or tensorflow tensor to <code>wandb.log</code> we automatically convert it as follows:</p>
+<ol>
+<li>If the object has a size of 1 just log the scalar value</li>
+<li>If the object has a size of 32 or less, convert the tensor to json</li>
+<li>If the object has a size greater than 32, log a histogram of the tensor</li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="logging-plots"></a><a href="#logging-plots" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging Plots</h3>
+<pre><code class="hljs css language-python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+plt.plot([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>])
+plt.ylabel(<span class="hljs-string">'some interesting numbers'</span>)
+wandb.log({<span class="hljs-string">"chart"</span>: plt})
+</code></pre>
+<p>You can pass a <code>matplotlib</code> pyplot or figure object into <code>wandb.log</code>. By default we'll convert the plot into a <a href="https://plot.ly">plotly</a> plot. If you want to explictly log the plot as an image, you can pass the plot into <code>wandb.Image</code>. We also accept directly logging <a href="https://plot.ly/">plotly</a> charts.</p>
+<h3><a class="anchor" aria-hidden="true" id="logging-images"></a><a href="#logging-images" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging Images</h3>
+<pre><code class="hljs css language-python">wandb.log({<span class="hljs-string">"examples"</span>: [wandb.Image(numpy_array_or_pil, caption=<span class="hljs-string">"Label"</span>)]})
+</code></pre>
+<p>If a numpy array is supplied we assume it's gray scale if the last dimension is 1, RGB if it's 3, and RGBA if it's 4. If the array contains floats we convert them to ints between 0 and 255. You can specify a <a href="https://pillow.readthedocs.io/en/3.1.x/handbook/concepts.html#concept-modes">mode</a>
+manually or just supply a <code>PIL.Image</code>. We recommend you don't add more than 20-50 images per step.</p>
+<p>On the W&amp;B runs page, you should edit your graphs and choose &quot;Image Viewer&quot; to see your training images.</p>
+<h3><a class="anchor" aria-hidden="true" id="logging-video"></a><a href="#logging-video" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging Video</h3>
+<pre><code class="hljs css language-python">wandb.log({<span class="hljs-string">"video"</span>: wandb.Video(numpy_array_or_path_to_video, fps=<span class="hljs-number">4</span>, format=<span class="hljs-string">"gif"</span>)})
+</code></pre>
+<p>If a numpy array is supplied we assume the dimensions are: time,channels,width,height. By default we create a 4 fps gif image (ffmpeg and the moviepy python library is required when passing numpy objects). Supported formats are &quot;gif&quot;, &quot;mp4&quot;, &quot;webm&quot;, and &quot;ogg&quot;. If you pass a string to <code>wandb.Video</code> we assert the file exists and is a supported format before uploading to wandb. Passing a BytesIO object will create a tempfile with the specified format as the extension.</p>
+<p>On the W&amp;B runs page, you will see your videos in the Media section.</p>
+<h3><a class="anchor" aria-hidden="true" id="logging-audio"></a><a href="#logging-audio" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging Audio</h3>
+<pre><code class="hljs css language-python">wandb.log({<span class="hljs-string">"examples"</span>: [wandb.Audio(numpy_array, caption=<span class="hljs-string">"Nice"</span>, sample_rate=<span class="hljs-number">32</span>)]})
+</code></pre>
+<p>The maximum number of audio clips that can be logged per step is 100.</p>
+<h3><a class="anchor" aria-hidden="true" id="logging-text-tables"></a><a href="#logging-text-tables" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging Text / Tables</h3>
+<pre><code class="hljs css language-python"><span class="hljs-comment"># Method 1</span>
+data = [[<span class="hljs-string">"I love my phone"</span>, <span class="hljs-string">"1"</span>, <span class="hljs-string">"1"</span>],[<span class="hljs-string">"My phone sucks"</span>, <span class="hljs-string">"0"</span>, <span class="hljs-string">"-1"</span>]]
+wandb.log({<span class="hljs-string">"examples"</span>: wandb.Table(data=data, columns=[<span class="hljs-string">"Text"</span>, <span class="hljs-string">"Predicted Label"</span>, <span class="hljs-string">"True Label"</span>])})
+
+<span class="hljs-comment"># Method 2</span>
+table = wandb.Table(columns=[<span class="hljs-string">"Text"</span>, <span class="hljs-string">"Predicted Label"</span>, <span class="hljs-string">"True Label"</span>])})
+table.add_data(<span class="hljs-string">"I love my phone"</span>, <span class="hljs-string">"1"</span>, <span class="hljs-string">"1"</span>)
+table.add_data(<span class="hljs-string">"My phone sucks"</span>, <span class="hljs-string">"0"</span>, <span class="hljs-string">"-1"</span>)
+wandb.log({<span class="hljs-string">"examples"</span>: table})
+</code></pre>
+<p>By default, the column headers are <code>[&quot;Input&quot;, &quot;Output&quot;, &quot;Expected&quot;]</code>. The maximum number of rows is 300.</p>
+<h3><a class="anchor" aria-hidden="true" id="logging-html"></a><a href="#logging-html" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging HTML</h3>
+<pre><code class="hljs css language-python">wandb.log({<span class="hljs-string">"custom_file"</span>: wandb.Html(open(<span class="hljs-string">"some.html"</span>))})
+wandb.log({<span class="hljs-string">"custom_string"</span>: wandb.Html(<span class="hljs-string">'&lt;a href="https://mysite"&gt;Link&lt;/a&gt;'</span>)})
+</code></pre>
+<p>Custom html can be logged at any key, this exposes an HTML panel on the run page. By default we inject default styles, you can disable default styles by passing <code>inject=False</code>.</p>
+<pre><code class="hljs css language-python">wandb.log({<span class="hljs-string">"custom_file"</span>: wandb.Html(open(<span class="hljs-string">"some.html"</span>), inject=<span class="hljs-literal">False</span>)})
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="logging-histograms"></a><a href="#logging-histograms" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging Histograms</h3>
+<pre><code class="hljs css language-python">wandb.log({<span class="hljs-string">"gradients"</span>: wandb.Histogram(numpy_array_or_sequence)})
+wandb.run.summary.update({<span class="hljs-string">"gradients"</span>: wandb.Histogram(np_histogram=np.histogram(data))})
+</code></pre>
+<p>If a sequence is provided as the first argument, we will bin the histogram automatically. You can also pass what is returned from <code>np.histogram</code> to the <strong>np_histogram</strong> keyword argument to do your own binning. The maximum number of bins supported is 512. You can use the optional <strong>num_bins</strong> keyword argument when passing a sequence to override the default of 64 bins.</p>
+<p>If histograms are in your summary they will appear as sparklines on the individual run pages. If they are in your history, we plot a heatmap of bins over time.</p>
+<h3><a class="anchor" aria-hidden="true" id="logging-3d-objects"></a><a href="#logging-3d-objects" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging 3D Objects</h3>
+<pre><code class="hljs css language-python">wandb.log({<span class="hljs-string">"generated_samples"</span>:
+           [wandb.Object3D(open(<span class="hljs-string">"sample.obj"</span>)),
+            wandb.Object3D(open(<span class="hljs-string">"sample.gltf"</span>)),
+            wandb.Object3D(open(<span class="hljs-string">"sample.glb"</span>))]})
+</code></pre>
+<p>Wandb supports logging 3D file types of in three different formats: glTF, glb, obj. The 3D files will be viewable on the run page upon completion of your run.</p>
+<h3><a class="anchor" aria-hidden="true" id="logging-point-clouds"></a><a href="#logging-point-clouds" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging Point Clouds</h3>
+<pre><code class="hljs css language-python">point_cloud = np.array([[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, COLOR...], ...])
+
+wandb.log({<span class="hljs-string">"point_cloud"</span>: wandb.Object3D(point_cloud)})
+</code></pre>
+<p>Numpy arrays logged via wandb.Object3D will be rendered as 3D point clouds.</p>
+<p>Supported numpy shapes include three different color schemes:</p>
+<ul>
+<li><code>[[x, y, z], ...]</code> nx3</li>
+<li><code>[[x, y, z, c], ...]</code> nx4 | c is a category with supported range [1, 14](Useful for segmentation)</li>
+<li><code>[[x, y, z, r, g, b], ...]</code> nx6 | r,g,b are values in the range [0,255] for Red, Green, and Blue color channels.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="summary-metrics"></a><a href="#summary-metrics" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Summary Metrics</h2>
+<p>The summary statistics are used to track single metrics per model. If a summary metric is modified, only the updated state is saved. We automatically set summary to the last history row added unless you modify it manually. If you change a summary metric, we only persist the last value it was set to.</p>
+<pre><code class="hljs css language-python">wandb.init(config=args)
+
+best_accuracy = <span class="hljs-number">0</span>
+<span class="hljs-keyword">for</span> epoch <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, args.epochs + <span class="hljs-number">1</span>):
+  test_loss, test_accuracy = test()
+  <span class="hljs-keyword">if</span> (test_accuracy &gt; best_accuracy):
+    wandb.run.summary[<span class="hljs-string">"best_accuracy"</span>] = test_accuracy
+    best_accuracy = test_accuracy
+</code></pre>
+<p>You may want to store evaluation metrics in a runs summary after training has completed. Summary can handle numpy arrays, pytorch tensors or tensorflow tensors. When a value is one of these types we persist the entire tensor in a binary file and store high level metrics in the summary object such as min, mean, variance, 95% percentile, etc.</p>
+<pre><code class="hljs css language-python">api = wandb.Api()
+run = api.run(<span class="hljs-string">"username/project/run_id"</span>)
+run.summary[<span class="hljs-string">"tensor"</span>] = np.random.random(<span class="hljs-number">1000</span>)
+run.summary.update()
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="accessing-logs-directly"></a><a href="#accessing-logs-directly" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Accessing Logs Directly</h2>
+<p>The history object is used to track metrics logged by <em>wandb.log</em>. You can access a mutable dictionary of metrics via <code>run.history.row</code>. The row will be saved and a new row created when <code>run.history.add</code> or <code>wandb.log</code> is called.</p>
+<h3><a class="anchor" aria-hidden="true" id="tensorflow-example"></a><a href="#tensorflow-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tensorflow Example</h3>
+<pre><code class="hljs css language-python--tensorflow">wandb.init(config=flags.FLAGS)
+
+<span class="hljs-meta"># Start tensorflow training</span>
+<span class="hljs-keyword">with</span> tf.Session() as sess:
+  sess.<span class="hljs-built_in">run</span>(init)
+
+  <span class="hljs-keyword">for</span> <span class="hljs-keyword">step</span> <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, <span class="hljs-built_in">run</span>.config.num_steps+<span class="hljs-number">1</span>):
+      batch_x, batch_y = mnist.train.next_batch(<span class="hljs-built_in">run</span>.config.batch_size)
+      <span class="hljs-meta"># Run optimization op (backprop)</span>
+      sess.<span class="hljs-built_in">run</span>(train_op, feed_dict={X: batch_x, Y: batch_y})
+      <span class="hljs-meta"># Calculate batch loss and accuracy</span>
+      loss, acc = sess.<span class="hljs-built_in">run</span>([loss_op, accuracy], feed_dict={X: batch_x, Y: batch_y})
+
+      wandb.<span class="hljs-built_in">log</span>({<span class="hljs-string">'acc'</span>: acc, <span class="hljs-string">'loss'</span>:loss}) <span class="hljs-meta"># log accuracy and loss</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="pytorch-example"></a><a href="#pytorch-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PyTorch Example</h3>
+<pre><code class="hljs css language-python--pytorch"># Start pytorch training
+wandb.init(config=<span class="hljs-keyword">args</span>)
+
+<span class="hljs-keyword">for</span> epoch <span class="hljs-keyword">in</span> <span class="hljs-keyword">range</span>(1, <span class="hljs-keyword">args</span>.epochs + 1):
+  train_loss = train(epoch)
+  test_loss, test_accuracy = <span class="hljs-keyword">test</span>()
+
+  torch.<span class="hljs-keyword">save</span>(model.state_dict(), 'model')
+
+  wandb.<span class="hljs-built_in">log</span>({<span class="hljs-string">"loss"</span>: train_loss, <span class="hljs-string">"val_loss"</span>: test_loss})
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/wandb/config"><span class="arrow-prev">← </span><span>wandb.config</span></a><a class="docs-next button" href="/wandb/save"><span>wandb.save</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#overview">Overview</a></li><li><a href="#example">Example</a></li><li><a href="#incremental-logging">Incremental Logging</a></li><li><a href="#logging-objects">Logging Objects</a><ul class="toc-headings"><li><a href="#logging-tensors">Logging Tensors</a></li><li><a href="#logging-plots">Logging Plots</a></li><li><a href="#logging-images">Logging Images</a></li><li><a href="#logging-video">Logging Video</a></li><li><a href="#logging-audio">Logging Audio</a></li><li><a href="#logging-text-tables">Logging Text / Tables</a></li><li><a href="#logging-html">Logging HTML</a></li><li><a href="#logging-histograms">Logging Histograms</a></li><li><a href="#logging-3d-objects">Logging 3D Objects</a></li><li><a href="#logging-point-clouds">Logging Point Clouds</a></li></ul></li><li><a href="#summary-metrics">Summary Metrics</a></li><li><a href="#accessing-logs-directly">Accessing Logs Directly</a><ul class="toc-headings"><li><a href="#tensorflow-example">Tensorflow Example</a></li><li><a href="#pytorch-example">PyTorch Example</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/wandb.svg" alt="W&amp;B" width="66" height="58"/></a><div><h5>Docs</h5><a href="/getting-started">Getting Started</a><a href="/wandb/init">Python API Reference</a><a href="/examples">Example Projects</a></div><div><h5>More</h5><a href="https://github.com/wandb/client">GitHub</a><a href="https://wandb.com">W&amp;B</a></div></section><section class="copyright">Copyright © 2019 Weights &amp; Biases, Inc.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '0510e717ad08795f12b729ed540687cb',
+                indexName: 'wandb',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

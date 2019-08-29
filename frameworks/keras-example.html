@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Keras Example · W&amp;B</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="This is a complete example of Keras code that trains a CNN and saves to W&amp;B."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Keras Example · W&amp;B"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.wandb.com/"/><meta property="og:description" content="This is a complete example of Keras code that trains a CNN and saves to W&amp;B."/><meta property="og:image" content="https://docs.wandb.com/img/wandb.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.wandb.com/img/wandb.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-cave-light.min.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/sidebar.js"></script><script type="text/javascript" src="/js/segment.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/wandb-long.svg" alt="W&amp;B"/><h2 class="headerTitleWithLogo">W&amp;B</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/getting-started" target="_self">Docs</a></li><li class=""><a href="/enterprise/about" target="_self">Enterprise</a></li><li class=""><a href="https://wandb.com" target="_self">Company</a></li><li class=""><a href="https://app.wandb.ai" target="_self">Login</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Examples</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/getting-started">Getting Started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Python Library</h3><ul class=""><li class="navListItem"><a class="navItem" href="/wandb/init">wandb.init</a></li><li class="navListItem"><a class="navItem" href="/wandb/config">wandb.config</a></li><li class="navListItem"><a class="navItem" href="/wandb/log">wandb.log</a></li><li class="navListItem"><a class="navItem" href="/wandb/save">wandb.save</a></li><li class="navListItem"><a class="navItem" href="/wandb/restore">wandb.restore</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Framework Support</h3><ul class=""><li class="navListItem"><a class="navItem" href="/frameworks/keras">Keras</a></li><li class="navListItem"><a class="navItem" href="/frameworks/tensorflow">TensorFlow</a></li><li class="navListItem"><a class="navItem" href="/frameworks/pytorch">PyTorch</a></li><li class="navListItem"><a class="navItem" href="/frameworks/fastai">Fast.ai</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integrations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/integrations/tensorboard">Tensorboard</a></li><li class="navListItem"><a class="navItem" href="/integrations/sagemaker">SageMaker</a></li><li class="navListItem"><a class="navItem" href="/integrations/kubeflow">Kubeflow</a></li><li class="navListItem"><a class="navItem" href="/integrations/docker">Docker</a></li><li class="navListItem"><a class="navItem" href="/integrations/jupyter">Jupyter</a></li><li class="navListItem"><a class="navItem" href="/integrations/api">Python Export API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Command Line</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cli/overview">Command Line Overview</a></li><li class="navListItem"><a class="navItem" href="/cli/restoring">Restoring State</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Advanced Usage</h3><ul class=""><li class="navListItem"><a class="navItem" href="/advanced/automated">Environment Variables</a></li><li class="navListItem"><a class="navItem" href="/advanced/grouping">Grouping</a></li><li class="navListItem"><a class="navItem" href="/advanced/resuming">Resuming</a></li><li class="navListItem"><a class="navItem" href="/advanced/security">Security</a></li><li class="navListItem"><a class="navItem" href="/advanced/limits">Limits</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Sweeps</h3><ul class=""><li class="navListItem"><a class="navItem" href="/sweeps/overview">Sweeps Overview</a></li><li class="navListItem"><a class="navItem" href="/sweeps/configuration">Configuration</a></li><li class="navListItem"><a class="navItem" href="/sweeps/local">Local Controller</a></li><li class="navListItem"><a class="navItem" href="/sweeps/python">Jupyter/Python API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Alerts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/alerts/slack">Slack</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Examples</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/frameworks/keras-example">Keras</a></li><li class="navListItem"><a class="navItem" href="/frameworks/tensorflow-example">TensorFlow</a></li><li class="navListItem"><a class="navItem" href="/frameworks/pytorch-example">PyTorch</a></li><li class="navListItem"><a class="navItem" href="/examples">More Projects</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Resources</h3><ul class=""><li class="navListItem"><a class="navItem" href="/faq">FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/wandb/docs/edit/master/docs/frameworks/keras-example.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Keras Example</h1></header><article><div><span><p>This is a complete example of Keras code that trains a CNN and saves to W&amp;B.</p>
+<p>You can find this example on <a href="https://github.com/wandb/examples/blob/master/keras-cnn-fashion/train.py">GitHub</a> and see the results on <a href="https://app.wandb.ai/wandb/keras-fashion-mnist/runs/5z1d85qs">W&amp;B</a>.</p>
+<pre><code class="hljs css language-python"><span class="hljs-keyword">from</span> keras.datasets <span class="hljs-keyword">import</span> fashion_mnist
+<span class="hljs-keyword">from</span> keras.models <span class="hljs-keyword">import</span> Sequential
+<span class="hljs-keyword">from</span> keras.layers <span class="hljs-keyword">import</span> Conv2D, MaxPooling2D, Dropout, Dense, Flatten
+<span class="hljs-keyword">from</span> keras.utils <span class="hljs-keyword">import</span> np_utils
+<span class="hljs-keyword">from</span> keras.optimizers <span class="hljs-keyword">import</span> SGD
+<span class="hljs-keyword">from</span> keras.callbacks <span class="hljs-keyword">import</span> TensorBoard
+
+<span class="hljs-keyword">import</span> wandb
+<span class="hljs-keyword">from</span> wandb.keras <span class="hljs-keyword">import</span> WandbCallback
+
+wandb.init() <span class="hljs-comment"># Initializes wandb</span>
+config = wandb.config <span class="hljs-comment"># Config is a variable that holds and saves hyperparameters and inputs</span>
+config.dropout = <span class="hljs-number">0.2</span>
+config.hidden_layer_size = <span class="hljs-number">128</span>
+config.layer_1_size  = <span class="hljs-number">16</span>
+config.layer_2_size = <span class="hljs-number">32</span>
+config.learn_rate = <span class="hljs-number">0.01</span>
+config.decay = <span class="hljs-number">1e-6</span>
+config.momentum = <span class="hljs-number">0.9</span>
+config.epochs = <span class="hljs-number">25</span>
+
+(X_train, y_train), (X_test, y_test) = fashion_mnist.load_data()
+labels=[<span class="hljs-string">"T-shirt/top"</span>,<span class="hljs-string">"Trouser"</span>,<span class="hljs-string">"Pullover"</span>,<span class="hljs-string">"Dress"</span>,<span class="hljs-string">"Coat"</span>,
+        <span class="hljs-string">"Sandal"</span>,<span class="hljs-string">"Shirt"</span>,<span class="hljs-string">"Sneaker"</span>,<span class="hljs-string">"Bag"</span>,<span class="hljs-string">"Ankle boot"</span>]
+
+img_width=<span class="hljs-number">28</span>
+img_height=<span class="hljs-number">28</span>
+
+X_train = X_train.astype(<span class="hljs-string">'float32'</span>)
+X_train /= <span class="hljs-number">255.</span>
+X_test = X_test.astype(<span class="hljs-string">'float32'</span>)
+X_test /= <span class="hljs-number">255.</span>
+
+<span class="hljs-comment">#reshape input data</span>
+X_train = X_train.reshape(X_train.shape[<span class="hljs-number">0</span>], img_width, img_height, <span class="hljs-number">1</span>)
+X_test = X_test.reshape(X_test.shape[<span class="hljs-number">0</span>], img_width, img_height, <span class="hljs-number">1</span>)
+
+<span class="hljs-comment"># one hot encode outputs</span>
+y_train = np_utils.to_categorical(y_train)
+y_test = np_utils.to_categorical(y_test)
+num_classes = y_test.shape[<span class="hljs-number">1</span>]
+
+sgd = SGD(lr=config.learn_rate, decay=config.decay, momentum=config.momentum,
+                            nesterov=<span class="hljs-literal">True</span>)
+
+<span class="hljs-comment"># build model</span>
+model = Sequential()
+model.add(Conv2D(config.layer_1_size, (<span class="hljs-number">5</span>, <span class="hljs-number">5</span>), activation=<span class="hljs-string">'relu'</span>,
+                            input_shape=(img_width, img_height,<span class="hljs-number">1</span>)))
+model.add(MaxPooling2D(pool_size=(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>)))
+model.add(Conv2D(config.layer_2_size, (<span class="hljs-number">5</span>, <span class="hljs-number">5</span>), activation=<span class="hljs-string">'relu'</span>))
+model.add(MaxPooling2D(pool_size=(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>)))
+model.add(Dropout(config.dropout))
+model.add(Flatten())
+model.add(Dense(config.hidden_layer_size, activation=<span class="hljs-string">'relu'</span>))
+model.add(Dense(num_classes, activation=<span class="hljs-string">'softmax'</span>))
+
+model.compile(loss=<span class="hljs-string">'categorical_crossentropy'</span>, optimizer=sgd, metrics=[<span class="hljs-string">'accuracy'</span>])
+
+<span class="hljs-comment"># The WandbCallback logs metrics and some examples of the test data</span>
+model.fit(X_train, y_train,  validation_data=(X_test, y_test), epochs=config.epochs,
+    callbacks=[WandbCallback(data_type=<span class="hljs-string">"image"</span>, labels=labels)])
+
+model.save(<span class="hljs-string">"cnn.h5"</span>)
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/alerts/slack"><span class="arrow-prev">← </span><span>Slack</span></a><a class="docs-next button" href="/frameworks/tensorflow-example"><span class="function-name-prevnext">TensorFlow</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/wandb.svg" alt="W&amp;B" width="66" height="58"/></a><div><h5>Docs</h5><a href="/getting-started">Getting Started</a><a href="/wandb/init">Python API Reference</a><a href="/examples">Example Projects</a></div><div><h5>More</h5><a href="https://github.com/wandb/client">GitHub</a><a href="https://wandb.com">W&amp;B</a></div></section><section class="copyright">Copyright © 2019 Weights &amp; Biases, Inc.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '0510e717ad08795f12b729ed540687cb',
+                indexName: 'wandb',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
