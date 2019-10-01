@@ -5,9 +5,10 @@ sidebar_label: Catalyst
 
 ## Overview
 
-If you are using Catalyst, 
+Sergey Kolesnikov, creator of [Catalyst](https://github.com/catalyst-team/catalyst), 
+has created an awesome W&B integration. If you are using Catalyst, 
 we have a runner that can automatically log all hyperparameters, 
-metrics, tensorboard, best trained model and all stdout during training.
+metrics, TensorBoard, the best trained model, and all `stdout` during training.
 
 ```python
 import torch
